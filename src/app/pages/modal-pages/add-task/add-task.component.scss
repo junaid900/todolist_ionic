@@ -1,0 +1,30 @@
+.colored-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px 2px #c1c1c1;
+} 
+.colored-circle.orange{
+    background: #fa9b4a;
+}
+
+.colored-circle.green{
+    background: #016e2d;
+}
+.colored-circle.red{
+    background: #b90000;
+}
+.colored-circle.blue{
+    background: #0300c7;
+}
+.colored-circle.purple{
+    background: #7400c7;
+}
+.colored-circle.active{
+    border: solid white;
+    border-width: 3px;
+}
+.color-type{
+    gap: 20px;
+    padding-top: 14px;
+}

@@ -1,0 +1,38 @@
+<div class="card-component">
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="12" sizeSm="10" sizeMd="8" sizeLg="6">
+      <ion-card>
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="12">
+              <ion-text class="morning-text">Good Morning</ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-row>
+                <ion-col size="12">
+                  <ion-text>
+                    <h4 class="today-heading">Today</h4>
+                  </ion-text>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-text>
+                    <h3 class="date-heading">{{currentDate()}}</h3>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col size="4">
+              <ion-text>
+                <h4 class="comp-tasks">Completed</h4>
+                <h4 class="comp-tasks">
+                  <span>{{completedTasks}}</span> /
+                  <span class="total-tasks-text">{{totalTasks}}</span>
+                </h4>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</div>

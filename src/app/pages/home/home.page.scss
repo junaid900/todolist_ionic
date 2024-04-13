@@ -1,0 +1,24 @@
+ion-input.custom {
+  // --background: #373737;
+  --color: #212121;
+  --background: #ffffff;
+  --placeholder-color: #6d6d6d;
+  --placeholder-opacity: 0.8;
+  // --border-radius: 10px
+  --padding-bottom: 10px;
+  --padding-end: 10px;
+  --padding-start: 10px;
+  --padding-top: 10px;
+}
+.search-container{
+  background-color: var(--ion-color-primary);
+  padding: 3% 5%;
+  width: 100%;
+}
+.segment-containers{
+  background-color: var(--ion-color-primary);
+  ion-segment{
+    // display: flex;
+    // overflow-x: scroll;
+  }
+}

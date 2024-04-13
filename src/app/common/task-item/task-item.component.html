@@ -1,0 +1,54 @@
+<div class="task-item" *ngIf="task.id != null">
+  <ion-row class="ion-align-items-center">
+    <ion-col size="8" id="taskItem{{ type }}-{{task.id}}">
+      <ion-row>
+        <ion-col size="5" class="ion-text-center" (click)="openPopover()">
+          <h6 class="m-0 f-md">{{isToday?"Today": date ? date : task.task_date}}</h6>
+          <h4 class="m-0 f-md bold">{{time}}</h4>
+        </ion-col>
+        <ion-col size="7" (click)="openPopover()">
+          <div>
+            <ion-text class="f-md bold {{task.status==1?'canceled-text':''}}">{{task.title || ""}}</ion-text>
+          </div>
+          <div>
+            <ion-text class="f-md {{task.status==1?'canceled-text':''}}">{{task.description || ""}}</ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+
+    <ion-col size="2">
+      <div class="ion-text-center" *ngIf="!hideStar">
+        <ion-icon (click)="addStar()" style="color: {{task.star == 1? 'var(--ion-color-primary)': ''}}"
+          name="{{task.star == 1? 'star': 'star-outline'}}" class="ico-star-size"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col size="2" class="ion-flex ion-justify-content-center">
+      <div class="colored-circle {{task.color}}"></div>
+    </ion-col>
+  </ion-row>
+  <!-- (didDismiss)="isShowingPopover = false" -->
+  <ion-popover [trigger]="'taskItem'+type+'-'+task.id" slot="start" triggerAction="click" [dismissOnSelect]="true">
+    <ng-template>
+      <ion-content class="ion-padding" (click)="markAsComplete()" *ngIf="!hideMarkAsComplete">
+        <span class="ion-flex ion-align-items-center"
+          style="color: {{task.status==1?'red':'var(--ion-color-success)'}}">
+          <ion-icon class="pr-sm" src="../../../assets/icon/checkmark-circle.svg"></ion-icon>
+          {{task.status==1?'Mark As Uncompleted':'Mark As Completed'}}
+        </span>
+      </ion-content>
+      <ion-content class="ion-padding" (click)="editTask()">
+        <span class="ion-flex ion-align-items-center">
+          <ion-icon class="pr-sm" src="../../../assets/icon/create-sharp.svg"></ion-icon>
+          Edit
+        </span>
+      </ion-content>
+      <ion-content class="ion-padding" (click)="deleteTask()">
+        <span class="ion-flex ion-align-items-center" style="color: var(--ion-color-danger);">
+          <ion-icon class="pr-sm" src="../../../assets/icon/trash-sharp.svg"></ion-icon>
+          Delete
+        </span>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+</div>
